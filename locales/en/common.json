@@ -1,0 +1,15 @@
+{
+    "component":{
+     "mainNavigationTopBar": {
+        "items": {
+                "changeLanguage": "Language"        
+     }
+    }
+ },
+ "texts":{
+      "language": {
+         "english": "English",
+         "thai": "Thai"
+      }
+ }
+}
