@@ -44,9 +44,7 @@ export default function Home({
   }, [locale]);
 
   if (loading) {
-    return (
-      <MainLoading config={{text:'Loading...'}}/>
-    );
+    return <MainLoading />;
   }
 
   return (
@@ -55,9 +53,66 @@ export default function Home({
       locale={locale}
       resources={resources}
     >
-      <main className={styles.main}>
-        <section className={`${styles.section}`}></section>
-      </main>
+      <div className={styles.Container}>
+        <div className={styles.MainPannel}>
+          <div className={styles.LeftMediumPannel}>
+            <div className={styles.RowPannel}>
+              <div className={styles.Window}>
+                <div className={styles.Content}></div>
+              </div>
+            </div>
+            <div className={styles.RowPannel}>
+              <div className={styles.Frame}>
+                <div className={styles.Content}></div>
+              </div>
+              <div className={styles.Frame}>
+                <div className={styles.Content}></div>
+              </div>
+              <div className={styles.Frame}>
+                <div className={styles.Content}></div>
+              </div>
+              <div className={styles.Frame}>
+                <div className={styles.Content}></div>
+              </div>
+              <div className={styles.Frame}>
+                <div className={styles.Content}></div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.SmallPannel}>
+            <div className={styles.ColumnPannel}>
+              <div className={styles.Frame}>
+                <div className={styles.Content}></div>
+              </div>
+              <div className={styles.Frame}>
+                <div className={styles.Content}></div>
+              </div>
+              <div className={styles.Frame}>
+                <div className={styles.Content}></div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.LargePannel}>
+            <div className={`${styles.RowPannel} ${styles.FullRowPannel}`}>
+              <div className={styles.LargeWindow}>
+                <div className={styles.Content}></div>
+              </div>
+            </div>
+          </div>
+          <div className={styles.RightMediumPannel}>
+            <div className={styles.RowPannel}>
+            <div className={styles.LargeShelf}>
+                <div className={styles.Content}></div>
+              </div>
+            </div>
+            <div className={styles.RowPannel}>
+              <div className={styles.LargeShelf}>
+                <div className={styles.Content}></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </TranslationsProvider>
   );
 }
