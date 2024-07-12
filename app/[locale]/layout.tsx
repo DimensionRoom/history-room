@@ -1,15 +1,15 @@
 import React, { ReactNode } from 'react';
 import type { Metadata } from "next";
-import { Quicksand, Mitr } from "next/font/google";
+import { Quicksand, DotGothic16 } from "next/font/google";
 import { dir } from 'i18next';
 import { ToastProvider , useToast} from '@/context/ToastContext';
 import i18nConfig from '@/i18nConfig';
 import "../globals.css";
 
 
-const quicksand = Quicksand({
+const GlobalFont = DotGothic16({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"]
+  weight: ["400"]
 });
 
 export const metadata: Metadata = {
@@ -32,7 +32,7 @@ export default function RootLayout({
 }: Readonly<RootLayoutProps>) {
   return (
     <html lang={locale} dir={dir(locale)} style={{ scrollBehavior: 'smooth' }}>
-      <body className={quicksand.className}>
+      <body className={GlobalFont.className}>
         <ToastProvider>   
         {children}
         </ToastProvider>

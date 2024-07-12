@@ -6,12 +6,52 @@
   align-items: center;
   justify-content: center;
   padding: 0 5%;
-  background-image:url('../../../public/images/seamless/woodplanks0001.png') ;
-  // background-position: 172% 100%;
+  background-image: url("../../../public/images/seamless/woodplanks0001.png");
   background-size: 10%;
   background-repeat: repeat;
   background-color: #2e2e2e;
   gap: 10px;
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* Ensures that the overlay does not interfere with interaction */
+    z-index: 1; /* Ensures the overlay is on top of the background image but below the content */
+  }
+  &.morning::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 179, 71, 0.2),
+      rgba(255, 206, 149, 0.1)
+    );
+  }
+
+  &.daytime::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 241, 104, 0.05),
+      rgba(0, 0, 0, 0.3)
+    );
+  }
+
+  &.evening::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(251, 90, 64, 0.45),
+      rgba(0, 0, 0, 0.4)
+    );
+  }
+
+  &.night::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 46, 101, 0.6),
+      rgba(0, 0, 0, 0.85)
+    );
+  }
 }
 
 .MainPannel {
@@ -19,6 +59,7 @@
   flex: 1;
   flex-direction: row;
   gap: 10px;
+  z-index: 2;
 }
 
 .SmallPannel {
@@ -37,10 +78,10 @@
   justify-content: flex-start;
   gap: 10px;
   .RowPannel {
-    flex:3;
+    flex: 3;
   }
-  .RowPannel+.RowPannel {
-    flex:1;
+  .RowPannel + .RowPannel {
+    flex: 1;
   }
 }
 
@@ -67,8 +108,8 @@
   gap: 10px;
 }
 
-.RowPannel.FullRowPannel{
-  flex:1;
+.RowPannel.FullRowPannel {
+  flex: 1;
 }
 
 .ColumnPannel {
@@ -125,7 +166,11 @@
   height: 100%;
   background-size: 100px 100px;
   background-color: #222;
+  color: #fff;
+  font-size: em;
+  font-weight: 300;
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
 }
