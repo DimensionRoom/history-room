@@ -151,6 +151,8 @@
 .Window {
   display: flex;
   width: 100%;
+  background-color: #46aaed;
+  border: 10px solid #704719;
   // width: 400px;
   // height: 290px;
 }
@@ -158,6 +160,8 @@
 .LargeWindow {
   display: flex;
   width: 100%;
+  background-color: #46aaed;
+  border: 10px solid #704719;
   // width: 800px;
   // height: 400px;
 }
@@ -166,9 +170,9 @@
   width: 100%;
   height: 100%;
   background-size: 100px 100px;
-  background-color: #222;
+  // background-color: #222;
   color: #fff;
-  font-size: em;
+  font-size: 1em;
   font-weight: 300;
   display: flex;
   text-align: center;
