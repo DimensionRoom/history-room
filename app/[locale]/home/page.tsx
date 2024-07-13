@@ -110,8 +110,8 @@ export default function Home({
           </div>
           <div className={styles.LargePannel}>
             <div className={`${styles.RowPannel} ${styles.FullRowPannel}`}>
-              <div className={styles.LargeWindow}>
-                <div className={styles.Content}>Coming Soon</div>
+              <div className={`${styles.LargeWindow} ${styles[timeOfDay]}`}>
+                <div className={`${styles.Content} ${styles[timeOfDay]}`}></div>
               </div>
             </div>
           </div>
