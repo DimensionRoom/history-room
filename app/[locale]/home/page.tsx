@@ -73,8 +73,10 @@ export default function Home({
         <div className={styles.MainPannel}>
           <div className={styles.LeftMediumPannel}>
             <div className={styles.RowPannel}>
-              <div className={styles.Window}>
-                <div className={styles.Content}>Coming Soon</div>
+              <div className={`${styles.Window} ${styles[timeOfDay]}`}>
+                <div className={`${styles.Content} ${styles[timeOfDay]}`}>
+                  <div className={styles.ContentText}>Coming Soon</div>
+                </div>
               </div>
             </div>
             <div className={styles.RowPannel}>
