@@ -122,6 +122,7 @@
 }
 
 .Frame,
+.LargeFrame,
 .Window,
 .LargeShelf,
 .LargeWindow {
@@ -134,7 +135,13 @@
 .Frame {
   display: flex;
   width: 100%;
-  height: 120px;
+  height: 80px;
+}
+
+.LargeFrame {
+  display: flex;
+  width: 100%;
+  height: 150px;
 }
 
 .LargeShelf {
@@ -154,7 +161,7 @@
   background-color: #46aaed;
   border: 10px solid #704719;
   // width: 400px;
-  // height: 290px;
+  // height: 320px;
   &.morning {
     background: linear-gradient(to bottom, rgb(81 179 255), rgb(255 150 28));
   }
@@ -288,7 +295,7 @@
   text-align: center;
   justify-content: center;
   align-items: center;
-  .ContentText{
+  .ContentText {
     position: absolute;
     z-index: 2;
   }

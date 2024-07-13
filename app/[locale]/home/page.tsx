@@ -99,13 +99,13 @@ export default function Home({
           </div>
           <div className={styles.SmallPannel}>
             <div className={styles.ColumnPannel}>
-              <div className={styles.Frame}>
+              <div className={styles.LargeFrame}>
                 <div className={styles.Content}>Coming Soon</div>
               </div>
-              <div className={styles.Frame}>
+              <div className={styles.LargeFrame}>
                 <div className={styles.Content}>Coming Soon</div>
               </div>
-              <div className={styles.Frame}>
+              <div className={styles.LargeFrame}>
                 <div className={styles.Content}>Coming Soon</div>
               </div>
             </div>
