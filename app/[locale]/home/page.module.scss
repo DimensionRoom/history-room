@@ -58,9 +58,10 @@
   display: flex;
   flex: 1;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
   z-index: 2;
-  overflow-x: auto;
+  // overflow-x: auto;
 }
 
 .SmallPannel {
@@ -128,7 +129,7 @@
 .LargeWindow {
   background-color: #2e2e2e;
   border: 3px solid #555;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 5px 1px rgba(0, 0, 0, 0.45);
   overflow: hidden;
 }
 
@@ -159,7 +160,7 @@
   display: flex;
   width: 100%;
   background-color: #46aaed;
-  border: 10px solid #704719;
+  border: 10px solid #6d3807;
   // width: 400px;
   // height: 320px;
   &.morning {
@@ -218,7 +219,7 @@
   background-position: bottom;
   background-repeat: repeat-x;
   background-color: #fff;
-  border: 10px solid #704719;
+  border: 10px solid #6d3807;
   // background-size: 50%;
   // width: 800px;
   // height: 400px;
