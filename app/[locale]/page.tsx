@@ -74,7 +74,7 @@ export default function Home({
           <div className={styles.LeftMediumPannel}>
             <div className={styles.RowPannel}>
               <div className={`${styles.Window} ${styles[timeOfDay]}`}>
-                <div className={`${styles.Content} ${styles[timeOfDay]}`}>
+                <div className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}>
                   <div className={styles.ContentText}>Coming Soon</div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function Home({
           <div className={styles.LargePannel}>
             <div className={`${styles.RowPannel} ${styles.FullRowPannel}`}>
               <div className={`${styles.LargeWindow} ${styles[timeOfDay]}`}>
-                <div className={`${styles.Content} ${styles[timeOfDay]}`}></div>
+                <div className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}></div>
               </div>
             </div>
           </div>

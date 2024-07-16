@@ -6,9 +6,11 @@
   align-items: center;
   justify-content: center;
   padding: 0 5%;
-  background-image: url("../../../public/images/seamless/woodplanks0001.png");
-  background-size: 10%;
-  background-repeat: repeat;
+  background-image: url("../../../public/images/seamless/floor001.png"),
+    url("../../../public/images/seamless/woodplanks0001.png");
+  background-size: auto 10%, auto 10%;
+  background-position: bottom, center;
+  background-repeat: repeat-x, repeat;
   background-color: #2e2e2e;
   gap: 10px;
   &:before {
@@ -247,6 +249,7 @@
       linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
     background-position: bottom;
     background-repeat: repeat-x;
+    animation: cityNightAnimation 2s infinite;
   }
   .Content:before {
     content: "";
@@ -298,8 +301,26 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  &.FrameContent {
+    border-top: 4px solid #2a1605;
+    border-right: 6px solid #492506;
+    border-bottom: 10px solid #89552a;
+    border-left: 6px solid #492506;
+  }
   .ContentText {
     position: absolute;
     z-index: 2;
+  }
+}
+
+@keyframes cityNightAnimation {
+  0% {
+    background-image: url("../../../public/images/seamless/city002.png"), linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
+  }
+  50% {
+    background-image: url("../../../public/images/seamless/city002-2.png"), linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
+  }
+  100% {
+    background-image: url("../../../public/images/seamless/city002.png"), linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
   }
 }
