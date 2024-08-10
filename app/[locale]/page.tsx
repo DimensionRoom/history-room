@@ -32,11 +32,11 @@ export default function Home({
   useEffect(() => {
     const updateTimeOfDay = () => {
       const hour = new Date().getHours();
-      if (hour >= 6 && hour < 12) {
+      if (hour >= 6 && hour < 11) {
         setTimeOfDay("morning");
-      } else if (hour >= 12 && hour < 18) {
+      } else if (hour >= 11 && hour < 17) {
         setTimeOfDay("daytime");
-      } else if (hour >= 18 && hour < 21) {
+      } else if (hour >= 17 && hour < 21) {
         setTimeOfDay("evening");
       } else {
         setTimeOfDay("night");

@@ -176,7 +176,10 @@
     background: linear-gradient(to bottom, rgb(255 179 81), rgb(255 28 28));
   }
   &.night {
-    background: linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
+    background-image:
+    url("../../../public/images/sprite/st04.png"),
+    linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
+    // background: linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
   }
   .Content:before {
     content: "";
@@ -246,11 +249,15 @@
   }
   &.night {
     background: url("../../../public/images/seamless/city002.png"),
-      linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
+      url("../../../public/images/sprite/starovl1.png"),
+      linear-gradient(to bottom, rgb(0, 1, 1), rgb(44 14 136));
     background-position: bottom;
-    background-repeat: repeat-x;
-    animation: cityNightAnimation 2s infinite;
+    background-repeat: repeat-x, repeat;
+    background-size: auto, 25%;
+    background-blend-mode: normal, hard-light;
+    animation: cityNightAnimation 25s linear infinite;
   }
+
   .Content:before {
     content: "";
     display: flex;
@@ -258,34 +265,43 @@
     min-width: 200px;
     height: 100%;
     z-index: 1;
+    border: 8px solid #462304;
   }
   .Content.morning:before {
     background: linear-gradient(
       to bottom,
-      rgba(255, 239, 71, 0.35),
-      rgba(0, 0, 0, 0.2)
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.2)
     );
   }
   .Content.daytime:before {
     background: linear-gradient(
       to bottom,
-      rgba(255, 137, 43, 0.15),
-      rgba(0, 0, 0, 0.15)
+      rgba(62, 163, 225, 0.5),
+      rgba(58, 194, 255, 0.25)
     );
   }
   .Content.evening:before {
     background: linear-gradient(
       to bottom,
-      rgba(255, 147, 71, 0.8),
-      rgba(0, 0, 0, 0.3)
+      rgba(244, 205, 174, 0.2),
+      rgba(255, 134, 63, 0.2)
     );
   }
   .Content.night:before {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.3)
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.2)
     );
+  }
+  .Content::after {
+    content: "";
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    // border: 8px solid #462304;
   }
 }
 
@@ -315,12 +331,38 @@
 
 @keyframes cityNightAnimation {
   0% {
-    background-image: url("../../../public/images/seamless/city002.png"), linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
+    background-image: url("../../../public/images/seamless/city002.png"),
+      url("../../../public/images/sprite/st04.png"),
+      linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
+    background-position: bottom, 0;
+    background-blend-mode: normal, hard-light, normal;
+  }
+  25% {
+    background-image: url("../../../public/images/seamless/city002-2.png"),
+      url("../../../public/images/sprite/st04.png") 20%,
+      linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
+    background-position: bottom, 25;
+    background-blend-mode: normal, hard-light, normal;
   }
   50% {
-    background-image: url("../../../public/images/seamless/city002-2.png"), linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
+    background-image: url("../../../public/images/seamless/city002.png"),
+      url("../../../public/images/sprite/st04.png"),
+      linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
+    background-position: bottom, 75;
+    background-blend-mode: normal, hard-light, normal;
+  }
+  75% {
+    background-image: url("../../../public/images/seamless/city002-2.png"),
+      url("../../../public/images/sprite/st04.png") 20%,
+      linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
+    background-position: bottom, 100;
+    background-blend-mode: normal, hard-light, normal;
   }
   100% {
-    background-image: url("../../../public/images/seamless/city002.png"), linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
+    background-image: url("../../../public/images/seamless/city002.png"),
+      url("../../../public/images/sprite/st04.png"),
+      linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
+    background-position: bottom, 200;
+    background-blend-mode: normal, hard-light, normal;
   }
 }
