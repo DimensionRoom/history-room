@@ -50,7 +50,7 @@
   &.night::before {
     background: linear-gradient(
       to bottom,
-      rgba(1, 36, 77, 0.6),
+      rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.85)
     );
   }
@@ -265,7 +265,7 @@
     min-width: 200px;
     height: 100%;
     z-index: 1;
-    border: 8px solid #462304;
+    border: 8px solid #6d6d6d;
   }
   .Content.morning:before {
     background: linear-gradient(
@@ -301,7 +301,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    // border: 8px solid #462304;
+    // border: 4px solid #4e4e4e;
   }
 }
 
@@ -339,7 +339,7 @@
   }
   25% {
     background-image: url("../../../public/images/seamless/city002-2.png"),
-      url("../../../public/images/sprite/st04.png") 20%,
+      url("../../../public/images/sprite/st04.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 25;
     background-blend-mode: normal, hard-light, normal;
@@ -353,7 +353,7 @@
   }
   75% {
     background-image: url("../../../public/images/seamless/city002-2.png"),
-      url("../../../public/images/sprite/st04.png") 20%,
+      url("../../../public/images/sprite/st04.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 100;
     background-blend-mode: normal, hard-light, normal;
