@@ -176,9 +176,8 @@
     background: linear-gradient(to bottom, rgb(255 179 81), rgb(255 28 28));
   }
   &.night {
-    background-image:
-    url("../../../public/images/sprite/st04.png"),
-    linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
+    background-image: url("../../../public/images/sprite/st01.png"),
+      linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     // background: linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
   }
   .Content:before {
@@ -210,11 +209,11 @@
     );
   }
   .Content.night:before {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.8)
-    );
+    // background: linear-gradient(
+    //   to bottom,
+    //   rgba(0, 0, 0, 0.6),
+    //   rgba(0, 0, 0, 0.8)
+    // );
   }
 }
 
@@ -249,7 +248,7 @@
   }
   &.night {
     background: url("../../../public/images/seamless/city002.png"),
-      url("../../../public/images/sprite/starovl1.png"),
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 1, 1), rgb(44 14 136));
     background-position: bottom;
     background-repeat: repeat-x, repeat;
@@ -269,7 +268,6 @@
     border-right: 12px solid #a76e3d;
     border-bottom: 8px solid #a76e3d;
     border-left: 12px solid #a76e3d;
-
   }
   .Content.morning:before {
     background: linear-gradient(
@@ -336,37 +334,51 @@
 @keyframes cityNightAnimation {
   0% {
     background-image: url("../../../public/images/seamless/city002.png"),
-      url("../../../public/images/sprite/st04.png"),
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 0;
     background-blend-mode: normal, hard-light, normal;
   }
   25% {
     background-image: url("../../../public/images/seamless/city002-2.png"),
-      url("../../../public/images/sprite/st04.png"),
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 25;
     background-blend-mode: normal, hard-light, normal;
   }
   50% {
     background-image: url("../../../public/images/seamless/city002.png"),
-      url("../../../public/images/sprite/st04.png"),
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 75;
     background-blend-mode: normal, hard-light, normal;
   }
   75% {
     background-image: url("../../../public/images/seamless/city002-2.png"),
-      url("../../../public/images/sprite/st04.png"),
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 100;
     background-blend-mode: normal, hard-light, normal;
   }
   100% {
     background-image: url("../../../public/images/seamless/city002.png"),
-      url("../../../public/images/sprite/st04.png"),
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 200;
     background-blend-mode: normal, hard-light, normal;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .LargeWindow {
+    .Content:before {
+      content: "";
+      display: flex;
+      border: none;
+      background: none;
+    }
+    .Content.night::before {
+      background: none;
+    }
   }
 }
