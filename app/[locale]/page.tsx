@@ -7,7 +7,9 @@ import Image from "next/image";
 import initTranslations from "./i18n";
 import TranslationsProvider from "@/components/Provider/TranslationsProvider";
 import MainLoading from "@/components/Loading/MainLoading";
+import { getMoonPhase } from "@/utils/DateAndTime/MoonPhase";
 import styles from "./home/page.module.scss";
+import { get } from "http";
 
 const i18nNamespaces = ["homeScreen"];
 const quicksand = Quicksand({
@@ -28,10 +30,13 @@ export default function Home({
   const [loading, setLoading] = useState<boolean>(true);
   const [timeOfDay, setTimeOfDay] = useState<string>("daytime");
   const currentPathname = usePathname();
+  const { phase, phaseName, phaseNameTH } = getMoonPhase();
 
   useEffect(() => {
     const updateTimeOfDay = () => {
       const hour = new Date().getHours();
+      // const hour = 21;
+
       if (hour >= 6 && hour < 11) {
         setTimeOfDay("morning");
       } else if (hour >= 11 && hour < 17) {
@@ -59,9 +64,16 @@ export default function Home({
     fetchTranslations();
   }, [locale]);
 
+  useEffect(() => {
+  console.log(phaseName)
+  }
+  , [phaseName]);
+
   if (loading) {
     return <MainLoading />;
   }
+
+
 
   return (
     <TranslationsProvider
@@ -74,7 +86,9 @@ export default function Home({
           <div className={styles.LeftMediumPannel}>
             <div className={styles.RowPannel}>
               <div className={`${styles.Window} ${styles[timeOfDay]}`}>
-                <div className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}>
+                <div
+                  className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}
+                >
                   <div className={styles.ContentText}>Coming Soon</div>
                 </div>
               </div>
@@ -113,7 +127,13 @@ export default function Home({
           <div className={styles.LargePannel}>
             <div className={`${styles.RowPannel} ${styles.FullRowPannel}`}>
               <div className={`${styles.LargeWindow} ${styles[timeOfDay]}`}>
-                <div className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}></div>
+                <div
+                  className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}
+                >
+                  <div className={styles.MoonPhaseContainer}>
+                    <Image className={styles.MoonPhases} fill src={`/images/sprite/moonphases/${phaseName}.png`} alt=''/>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -220,7 +220,8 @@
 .LargeWindow {
   display: flex;
   width: 100%;
-  background-image: url("../../../public/images/seamless/city001.png");
+  background-image: url("../../../public/images/seamless/city001.png"),
+    url("../../../public/images/sprite/moonphases/Full Moon.png");
   background-position: bottom;
   background-repeat: repeat-x;
   background-color: #fff;
@@ -250,9 +251,9 @@
     background: url("../../../public/images/seamless/city002.png"),
       url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 1, 1), rgb(44 14 136));
-    background-position: bottom;
-    background-repeat: repeat-x, repeat;
-    background-size: auto, 25%;
+    background-position: bottom,bottom;
+    background-repeat: repeat-x, repeat,no-repeat,no-repeat;
+    background-size: auto, 25%, 100%;
     background-blend-mode: normal, hard-light;
     animation: cityNightAnimation 25s linear infinite;
   }
@@ -324,6 +325,17 @@
     border-right: 6px solid #492506;
     border-bottom: 10px solid #89552a;
     border-left: 6px solid #492506;
+    .MoonPhaseContainer{
+      width: 6vh;
+      height: 6vh;
+      position: absolute;
+      color: #ffffff;
+      top: 25px;
+      right: 25px;
+      .MoonPhases{
+        filter: drop-shadow(0px 0px 5px #ffff0e);
+      }
+    }
   }
   .ContentText {
     position: absolute;
@@ -344,7 +356,7 @@
       url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 25;
-    background-blend-mode: normal, hard-light, normal;
+    background-blend-mode: normal, normal, normal;
   }
   50% {
     background-image: url("../../../public/images/seamless/city002.png"),
@@ -358,7 +370,7 @@
       url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 100;
-    background-blend-mode: normal, hard-light, normal;
+    background-blend-mode: normal, normal, normal;
   }
   100% {
     background-image: url("../../../public/images/seamless/city002.png"),
@@ -369,7 +381,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 760px) {
   .LargeWindow {
     .Content:before {
       content: "";
@@ -380,5 +392,8 @@
     .Content.night::before {
       background: none;
     }
+  }
+  .MoonPhaseContainer{
+    display: none;
   }
 }
