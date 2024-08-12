@@ -65,15 +65,12 @@ export default function Home({
   }, [locale]);
 
   useEffect(() => {
-  console.log(phaseName)
-  }
-  , [phaseName]);
+    console.log(phaseName);
+  }, [phaseName]);
 
   if (loading) {
     return <MainLoading />;
   }
-
-
 
   return (
     <TranslationsProvider
@@ -130,9 +127,16 @@ export default function Home({
                 <div
                   className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}
                 >
-                  <div className={styles.MoonPhaseContainer}>
-                    <Image className={styles.MoonPhases} fill src={`/images/sprite/moonphases/${phaseName}.png`} alt=''/>
-                  </div>
+                  {timeOfDay === "night" && (
+                    <div className={styles.MoonPhaseContainer}>
+                      <Image
+                        className={styles.MoonPhases}
+                        fill
+                        src={`/images/sprite/moonphases/${phaseName}.png`}
+                        alt=""
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
