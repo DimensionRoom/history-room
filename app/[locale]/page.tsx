@@ -137,7 +137,7 @@ export default function Home({
                       />
                     </div>
                   )}
-                      {timeOfDay === "daytime" && (
+                  {timeOfDay === "daytime" && (
                     <div className={styles.SunContainer}>
                       <Image
                         className={styles.Sun}

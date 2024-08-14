@@ -220,12 +220,7 @@
 .LargeWindow {
   display: flex;
   width: 100%;
-  background-image: url("../../../public/images/seamless/city001.png");
-  background-position: bottom;
-  background-repeat: repeat-x;
-  background-color: #fff;
   border: 10px solid #6d3807;
-  // background-size: 50%;
   // width: 800px;
   // height: 400px;
   &.morning {
@@ -242,9 +237,12 @@
   }
   &.evening {
     background: url("../../../public/images/seamless/city001.png"),
+      url("../../../public/images/sprite/sun/daytimesun.png"),
       linear-gradient(to bottom, rgb(255 179 81), rgb(255 28 28));
-    background-position: bottom;
-    background-repeat: repeat-x;
+    background-position: bottom, 87% 61%;
+    background-repeat: repeat-x, no-repeat;
+    background-size: auto, 5rem;
+    background-blend-mode: normal, overlay;
   }
   &.night {
     background: url("../../../public/images/seamless/city002.png"),
