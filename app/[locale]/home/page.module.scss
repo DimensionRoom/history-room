@@ -250,8 +250,8 @@
     background: url("../../../public/images/seamless/city002.png"),
       url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 1, 1), rgb(44 14 136));
-    background-position: bottom,bottom;
-    background-repeat: repeat-x, repeat,no-repeat,no-repeat;
+    background-position: bottom, bottom;
+    background-repeat: repeat-x, repeat, no-repeat, no-repeat;
     background-size: auto, 25%, 100%;
     background-blend-mode: normal, hard-light;
     animation: cityNightAnimation 25s linear infinite;
@@ -324,14 +324,25 @@
     border-right: 6px solid #492506;
     border-bottom: 10px solid #89552a;
     border-left: 6px solid #492506;
-    .MoonPhaseContainer{
+    .SunContainer {
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      color: #ffffff;
+      top: 5%;
+      right: 20%;
+      .Sun {
+        filter: drop-shadow(0px 0px 10px #ffe6ad);
+      }
+    }
+    .MoonPhaseContainer {
       width: 6vh;
       height: 6vh;
       position: absolute;
       color: #ffffff;
       top: 25px;
       right: 25px;
-      .MoonPhases{
+      .MoonPhases {
         filter: drop-shadow(0px 0px 5px #ffff0e);
       }
     }
@@ -388,11 +399,15 @@
       border: none;
       background: none;
     }
-    .Content.night::before {
+    .Content.morning:before,
+    .Content.daytime:before,
+    .Content.evening:before,
+    .Content.night:before {
       background: none;
     }
   }
-  .MoonPhaseContainer{
+  .MoonPhaseContainer,
+  .SunContainer {
     display: none;
   }
 }

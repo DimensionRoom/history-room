@@ -137,6 +137,16 @@ export default function Home({
                       />
                     </div>
                   )}
+                      {timeOfDay === "daytime" && (
+                    <div className={styles.SunContainer}>
+                      <Image
+                        className={styles.Sun}
+                        fill
+                        src={`/images/sprite/sun/${timeOfDay}sun.png`}
+                        alt=""
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
