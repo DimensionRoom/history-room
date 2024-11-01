@@ -130,7 +130,7 @@ export default function Home({
                   {timeOfDay === "night" && (
                     <div className={styles.MoonPhaseContainer}>
                       <Image
-                        className={`${styles.MoonPhases} ${phaseName === "newmoon" ? styles.NewMoon : null}`}
+                        className={`${styles.MoonPhases} ${phaseName === "New Moon" ? styles.NewMoon : null}`}
                         fill
                         src={`/images/sprite/moonphases/${phaseName}.png`}
                         alt=""
