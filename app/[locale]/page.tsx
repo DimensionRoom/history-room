@@ -86,18 +86,11 @@ export default function Home({
         <div className={styles.MainPannel}>
           <div className={styles.LeftMediumPannel}>
             <div className={styles.RowPannel}>
-              <div className={`${styles.Window} ${styles[timeOfDay]}`}>
-<<<<<<< HEAD
-                <div
-                  className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}
-                >
-                  <div className={styles.ContentText}>Coming Soon</div>
-=======
-                <div className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}>
-                  <div className={styles.ContentText}>{t('homeScreen.comingSoon')}</div>
->>>>>>> 33a3d8ba9ae9f44ecd9e9d2b3bdc65d09334dc1b
-                </div>
-              </div>
+<div className={`${styles.Window} ${styles[timeOfDay]}`}>
+  <div className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}>
+    <div className={styles.ContentText}>{t('homeScreen.comingSoon')}</div>
+  </div>
+</div>
             </div>
             <div className={styles.RowPannel}>
               <div className={styles.Frame}>

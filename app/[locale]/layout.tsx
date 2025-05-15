@@ -5,10 +5,6 @@ import { dir } from 'i18next';
 import { ToastProvider } from '@/context/ToastContext';
 import i18nConfig from '@/i18nConfig';
 import "../globals.scss";
-<<<<<<< HEAD
-
-=======
->>>>>>> 33a3d8ba9ae9f44ecd9e9d2b3bdc65d09334dc1b
 
 const GlobalFont = DotGothic16({
   subsets: ["latin"],
