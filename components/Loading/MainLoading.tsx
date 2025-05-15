@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import styles from "./MainLoading.module.scss";
+import React from "react";
+import styles from "./MainLoading.scss";
 
 export type Props = {
   id?: string;
