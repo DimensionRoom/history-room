@@ -1,0 +1,57 @@
+// Variables
+$toast-padding: 10px 20px;
+$toast-border-radius: 8px;
+$toast-z-index: 1000;
+$toast-opacity: 0;
+$toast-transform: translateX(-50%);
+$toast-bg-opacity: 0.85;
+
+$toast-colors: (
+  info: #2196F3,
+  success: #4CAF50,
+  error: #F44336,
+  warning: #FF9800
+);
+
+// Mixin for toast styles
+@mixin toast-base($bg-color) {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: $toast-transform;
+  padding: $toast-padding;
+  border-radius: $toast-border-radius;
+  color: white;
+  background-color: $bg-color;
+  z-index: $toast-z-index;
+  opacity: $toast-opacity;
+  animation: fadeInOut 3.5s ease-in-out;
+}
+
+// Toast styles
+.toast {
+  @include toast-base(rgba(0, 0, 0, $toast-bg-opacity));
+
+  @each $type, $color in $toast-colors {
+    &.#{$type} {
+      background-color: $color;
+    }
+  }
+}
+
+// Keyframes
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: $toast-transform translateY(20px);
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: $toast-transform translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: $toast-transform translateY(20px);
+  }
+}
