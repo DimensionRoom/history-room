@@ -1,9 +1,15 @@
 :root {
+
   * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
   }
+
+  /* * {
+    box-sizing: border-box;
+    outline: 1px solid red;
+  } */
 
   html,
   body {
@@ -19,17 +25,13 @@
     background: #F6F6F6;
   }
 
-  a {
+  a,
+  a:visited,
+  a:active,
+  a:hover,
+  a:link {
     color: inherit;
     text-decoration: none;
-    
-    &:visited,
-    &:active,
-    &:hover,
-    &:link {
-      color: inherit;
-      text-decoration: none;
-    }
   }
 
   .d-none {
@@ -48,18 +50,16 @@
     flex-direction: row;
   }
 
-  .align {
-    &-center {
-      align-items: center;
-    }
+  .align-center {
+    align-items: center;
+  }
 
-    &-flex-start {
-      align-items: flex-start;
-    }
+  .align-flex-start {
+    align-items: flex-start;
+  }
 
-    &-flex-end {
-      align-items: flex-end;
-    }
+  .align-flex-end {
+    align-items: flex-end;
   }
 
   .justify-center {
