@@ -9,15 +9,19 @@ import TranslationsProvider from "@/components/Provider/TranslationsProvider";
 import MainLoading from "@/components/Loading/MainLoading";
 import styles from "./home/page.module.scss";
 
-const i18nNamespaces = ["homeScreen"];
+const i18nNamespaces = ["homeScreen", "common"];
+
 const quicksand = Quicksand({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
+
 const mitr = Mitr({
-  subsets: ["thai"],
+  subsets: ["thai", "latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
+  variable: '--font-mitr',
 });
+
 export default function Home({
   params: { locale },
 }: {
@@ -43,7 +47,7 @@ export default function Home({
       }
     };
     updateTimeOfDay();
-    const interval = setInterval(updateTimeOfDay, 60000); // Update every minute
+    const interval = setInterval(updateTimeOfDay, 60000);
     return () => clearInterval(interval);
   }, []);
 
@@ -69,44 +73,44 @@ export default function Home({
       locale={locale}
       resources={resources}
     >
-      <div className={`${styles.Container} ${styles[timeOfDay]}`}>
+      <div className={`${styles.Container} ${styles[timeOfDay]} ${locale === 'th' ? mitr.className : quicksand.className}`}>
         <div className={styles.MainPannel}>
           <div className={styles.LeftMediumPannel}>
             <div className={styles.RowPannel}>
               <div className={`${styles.Window} ${styles[timeOfDay]}`}>
                 <div className={`${styles.Content} ${styles[timeOfDay]} ${styles.FrameContent}`}>
-                  <div className={styles.ContentText}>Coming Soon</div>
+                  <div className={styles.ContentText}>{t('homeScreen.comingSoon')}</div>
                 </div>
               </div>
             </div>
             <div className={styles.RowPannel}>
               <div className={styles.Frame}>
-                <div className={styles.Content}>Coming Soon</div>
+                <div className={styles.Content}>{t('homeScreen.comingSoon')}</div>
               </div>
               <div className={styles.Frame}>
-                <div className={styles.Content}>Coming Soon</div>
+                <div className={styles.Content}>{t('homeScreen.comingSoon')}</div>
               </div>
               <div className={styles.Frame}>
-                <div className={styles.Content}>Coming Soon</div>
+                <div className={styles.Content}>{t('homeScreen.comingSoon')}</div>
               </div>
               <div className={styles.Frame}>
-                <div className={styles.Content}>Coming Soon</div>
+                <div className={styles.Content}>{t('homeScreen.comingSoon')}</div>
               </div>
               <div className={styles.Frame}>
-                <div className={styles.Content}>Coming Soon</div>
+                <div className={styles.Content}>{t('homeScreen.comingSoon')}</div>
               </div>
             </div>
           </div>
           <div className={styles.SmallPannel}>
             <div className={styles.ColumnPannel}>
               <div className={styles.LargeFrame}>
-                <div className={styles.Content}>Coming Soon</div>
+                <div className={styles.Content}>{t('homeScreen.comingSoon')}</div>
               </div>
               <div className={styles.LargeFrame}>
-                <div className={styles.Content}>Coming Soon</div>
+                <div className={styles.Content}>{t('homeScreen.comingSoon')}</div>
               </div>
               <div className={styles.LargeFrame}>
-                <div className={styles.Content}>Coming Soon</div>
+                <div className={styles.Content}>{t('homeScreen.comingSoon')}</div>
               </div>
             </div>
           </div>
@@ -120,12 +124,12 @@ export default function Home({
           <div className={styles.RightMediumPannel}>
             <div className={styles.RowPannel}>
               <div className={styles.LargeShelf}>
-                <div className={styles.Content}>Coming Soon</div>
+                <div className={styles.Content}>{t('homeScreen.comingSoon')}</div>
               </div>
             </div>
             <div className={styles.RowPannel}>
               <div className={styles.LargeShelf}>
-                <div className={styles.Content}>Coming Soon</div>
+                <div className={styles.Content}>{t('homeScreen.comingSoon')}</div>
               </div>
             </div>
           </div>
