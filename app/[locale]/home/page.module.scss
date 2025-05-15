@@ -50,7 +50,7 @@
   &.night::before {
     background: linear-gradient(
       to bottom,
-      rgba(1, 36, 77, 0.6),
+      rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.85)
     );
   }
@@ -176,9 +176,8 @@
     background: linear-gradient(to bottom, rgb(255 179 81), rgb(255 28 28));
   }
   &.night {
-    background-image:
-    url("../../../public/images/sprite/st04.png"),
-    linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
+    background-image: url("../../../public/images/sprite/st01.png"),
+      linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     // background: linear-gradient(to bottom, rgb(0 33 47), rgb(44 14 136));
   }
   .Content:before {
@@ -210,23 +209,18 @@
     );
   }
   .Content.night:before {
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.8)
-    );
+    // background: linear-gradient(
+    //   to bottom,
+    //   rgba(0, 0, 0, 0.6),
+    //   rgba(0, 0, 0, 0.8)
+    // );
   }
 }
 
 .LargeWindow {
   display: flex;
   width: 100%;
-  background-image: url("../../../public/images/seamless/city001.png");
-  background-position: bottom;
-  background-repeat: repeat-x;
-  background-color: #fff;
   border: 10px solid #6d3807;
-  // background-size: 50%;
   // width: 800px;
   // height: 400px;
   &.morning {
@@ -243,17 +237,20 @@
   }
   &.evening {
     background: url("../../../public/images/seamless/city001.png"),
+      url("../../../public/images/sprite/sun/daytimesun.png"),
       linear-gradient(to bottom, rgb(255 179 81), rgb(255 28 28));
-    background-position: bottom;
-    background-repeat: repeat-x;
+    background-position: bottom, 87% 61%;
+    background-repeat: repeat-x, no-repeat;
+    background-size: auto, 5rem;
+    background-blend-mode: normal, overlay;
   }
   &.night {
     background: url("../../../public/images/seamless/city002.png"),
-      url("../../../public/images/sprite/starovl1.png"),
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 1, 1), rgb(44 14 136));
-    background-position: bottom;
-    background-repeat: repeat-x, repeat;
-    background-size: auto, 25%;
+    background-position: bottom, bottom;
+    background-repeat: repeat-x, repeat, no-repeat, no-repeat;
+    background-size: auto, 25%, 100%;
     background-blend-mode: normal, hard-light;
     animation: cityNightAnimation 25s linear infinite;
   }
@@ -265,7 +262,10 @@
     min-width: 200px;
     height: 100%;
     z-index: 1;
-    border: 8px solid #462304;
+    border-top: 8px solid #a76e3d;
+    border-right: 12px solid #a76e3d;
+    border-bottom: 8px solid #a76e3d;
+    border-left: 12px solid #a76e3d;
   }
   .Content.morning:before {
     background: linear-gradient(
@@ -291,8 +291,8 @@
   .Content.night:before {
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.2)
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.3)
     );
   }
   .Content::after {
@@ -301,7 +301,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
-    // border: 8px solid #462304;
+    // border: 4px solid #4e4e4e;
   }
 }
 
@@ -322,6 +322,31 @@
     border-right: 6px solid #492506;
     border-bottom: 10px solid #89552a;
     border-left: 6px solid #492506;
+    .SunContainer {
+      width: 4rem;
+      height: 4rem;
+      position: absolute;
+      color: #ffffff;
+      top: 5%;
+      right: 20%;
+      .Sun {
+        filter: drop-shadow(0px 0px 10px #ffe6ad);
+      }
+    }
+    .MoonPhaseContainer {
+      width: 6vh;
+      height: 6vh;
+      position: absolute;
+      color: #ffffff;
+      top: 25px;
+      right: 25px;
+      .MoonPhases {
+        filter: drop-shadow(0px 0px 5px #ffff0e);
+      }
+      .NewMoon {
+        filter: brightness(0.2);
+      }
+    }
   }
   .ContentText {
     position: absolute;
@@ -332,37 +357,58 @@
 @keyframes cityNightAnimation {
   0% {
     background-image: url("../../../public/images/seamless/city002.png"),
-      url("../../../public/images/sprite/st04.png"),
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 0;
     background-blend-mode: normal, hard-light, normal;
   }
   25% {
     background-image: url("../../../public/images/seamless/city002-2.png"),
-      url("../../../public/images/sprite/st04.png") 20%,
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 25;
-    background-blend-mode: normal, hard-light, normal;
+    background-blend-mode: normal, normal, normal;
   }
   50% {
     background-image: url("../../../public/images/seamless/city002.png"),
-      url("../../../public/images/sprite/st04.png"),
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 75;
     background-blend-mode: normal, hard-light, normal;
   }
   75% {
     background-image: url("../../../public/images/seamless/city002-2.png"),
-      url("../../../public/images/sprite/st04.png") 20%,
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 100;
-    background-blend-mode: normal, hard-light, normal;
+    background-blend-mode: normal, normal, normal;
   }
   100% {
     background-image: url("../../../public/images/seamless/city002.png"),
-      url("../../../public/images/sprite/st04.png"),
+      url("../../../public/images/sprite/st01.png"),
       linear-gradient(to bottom, rgb(0, 12, 47), rgb(44 14 136));
     background-position: bottom, 200;
     background-blend-mode: normal, hard-light, normal;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .LargeWindow {
+    .Content:before {
+      content: "";
+      display: flex;
+      border: none;
+      background: none;
+    }
+    .Content.morning:before,
+    .Content.daytime:before,
+    .Content.evening:before,
+    .Content.night:before {
+      background: none;
+    }
+  }
+  .MoonPhaseContainer,
+  .SunContainer {
+    display: none;
   }
 }
